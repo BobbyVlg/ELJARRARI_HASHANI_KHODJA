@@ -9,9 +9,9 @@ class Person {
     private static String lastName;
     private static int color;
 
-    public Person(String name, String lastName) {
-        this.name = name;
-        this.lastName = lastName;
+    Person(String name, String lastName) {
+        Person.name = name;
+        Person.lastName = lastName;
     }
 
     public static void setName(String newName) {
@@ -26,16 +26,21 @@ class Person {
         color = newColor;
     }
 
-    public static String getName(){
+    static String getName(){
         return name;
     }
 
-    public static String getLastName(){
+    static String getLastName(){
         return lastName;
     }
 
     public static int getColor() {
         return color;
+    }
+
+    @Override
+    public String toString() {
+        return name + " " + lastName;
     }
 
 }

@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class Trombinoscpe extends AppCompatActivity {
+    DataPerson dataPerson = new DataPerson();
     Button trombinoscope;
     Button ajout;
 
@@ -15,23 +16,24 @@ public class Trombinoscpe extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trombinoscpe);
+
         trombinoscope = (Button)findViewById(R.id.button);
         ajout = (Button)findViewById(R.id.button2);
 
         trombinoscope.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "BIENVENUE AU TROMBINOSCOPE", Toast.LENGTH_LONG).show();
+                navigateTo(ListPersons.class);
             }
         });
 
         ajout.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                navigateToAddPerson(v);
+                navigateTo(AddPersonActivity.class);
             }
         });
     }
 
-    private void navigateToAddPerson(View v) {
-        startActivity(new Intent(Trombinoscpe.this,AddPersonActivity.class));
+    private void navigateTo(Class c) {
+        startActivity(new Intent(Trombinoscpe.this,c));
     }
 }

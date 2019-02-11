@@ -9,15 +9,16 @@ import java.util.ArrayList;
 public class DataPerson {
     private static ArrayList<Person> listPersons;
 
-    public DataPerson(){
+    DataPerson(){
+        listPersons = new ArrayList<>();
 
     }
 
-    public static ArrayList<Person> getPersons() {
+    static ArrayList<Person> getPersons() {
         return listPersons;
     }
 
-    public static void addPerson(Person personToAdd) {
+    static void addPerson(Person personToAdd) {
         listPersons.add(personToAdd);
     }
 }
