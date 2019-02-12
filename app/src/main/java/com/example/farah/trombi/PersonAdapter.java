@@ -20,9 +20,8 @@ public class PersonAdapter extends ArrayAdapter<Person> {
             super(context, 0, persons);
         }
 
-        @NonNull
         @Override
-        public View getView(int position, View convertView, @NonNull ViewGroup parent) {
+        public View getView(int position, View convertView, ViewGroup parent) {
 
             if(convertView == null){
                 convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_person, parent, false);

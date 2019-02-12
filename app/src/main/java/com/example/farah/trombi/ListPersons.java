@@ -8,16 +8,15 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.farah.trombi.AddPersonActivity.persons;
+
 public class ListPersons extends AppCompatActivity {
     ListView listViewPersons;
-    private ArrayList<Person> persons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_persons);
-
-        persons = DataPerson.getPersons();
 
         listViewPersons = (ListView)findViewById(R.id.listPersons);
 
@@ -26,5 +25,7 @@ public class ListPersons extends AppCompatActivity {
 
     }
 }
+
+
 
 

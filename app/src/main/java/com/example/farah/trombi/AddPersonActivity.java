@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class AddPersonActivity extends AppCompatActivity {
 
     Button addPerson;
@@ -14,6 +16,9 @@ public class AddPersonActivity extends AppCompatActivity {
     String prenom;
     EditText etNom;
     EditText etPrenom;
+
+    public static ArrayList<Person> persons = new ArrayList<Person>();
+    Person person;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +33,8 @@ public class AddPersonActivity extends AppCompatActivity {
             public void onClick(View v) {
                 nom = etNom.getText().toString();
                 prenom = etPrenom.getText().toString();
-                Person person = new Person(nom, prenom);
-                DataPerson.addPerson(person);
+                person = new Person(nom, prenom);
+                persons.add(person);
 
                 Toast.makeText(getApplicationContext(),"Nom: "+nom+"\n"+"Prenom: " + prenom+"\n a été ajouter", Toast.LENGTH_LONG).show();
             }
